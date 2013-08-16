@@ -5,11 +5,8 @@ $gutters: 2%;
 $col: (100% - ($gridColumns - 1) * $gutters) / $gridColumns;
 
 @mixin span($columns){
-	width: (100% / $gridColumns) * $columns;
+  width: (100% / $gridColumns) * $columns;
 }
 @mixin gutters_span($columns){
-	width: $col * $columns + $gutters * ($columns - 1);
+  width: $col * $columns + $gutters * ($columns - 1);
 }
-
-
-
