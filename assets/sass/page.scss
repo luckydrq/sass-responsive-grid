@@ -1,0 +1,85 @@
+@import 'variable';
+
+/**
+ * Set all elements to box-sizing 
+ * Fix IE 6,7: https://github.com/Schepp/box-sizing-polyfill
+*/
+
+* { 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	*behavior: url(/scripts/boxsizing.htc);  
+}
+
+/**
+ * Set page
+ *
+*/
+.container { 
+	max-width: $containerMaxWidth;
+	margin: 0 auto; 
+}
+
+/* Clear fix */
+.container:after,
+.row:after, 
+.col:after, 
+.clr:after, 
+.group:after { 
+	content: ""; 
+	display: table; 
+	clear: both; 
+}
+
+/* Default row */
+.row { padding-bottom: 0em;
+}
+			
+								  
+/* Default column */
+.col { 
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+/**
+ *  Responsive 
+ */
+
+@media ( min-width : $screenMinWidth ) {
+	.gutters .col {
+		margin-left: $gutters;
+	}
+	.gutters .col:first-child { 
+		margin-left: 0; 
+	}
+}
+
+@media ( min-width : $screenMinWidth ) {	
+	@for $i from 1 through $gridColumns{
+		.span#{$i} {
+			@include span($i);
+		}
+	}
+
+	@for $j from 1 through $gridColumns{
+		.gutters .span#{$j} {
+			@include gutters_span($j);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
