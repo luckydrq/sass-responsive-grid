@@ -1,0 +1,51 @@
+/**
+ * Set page
+ *
+*/
+.container {
+  max-width: $containerMaxWidth;
+  margin: 0 auto;
+  @include clearfix;
+}
+
+/* Default row */
+.row {
+  padding-bottom: 0em;
+  @include clearfix;
+}
+
+
+/* Default column */
+.col {
+  display: block;
+  float: left;
+  width: 100%;
+  @include clearfix;
+}
+
+/**
+ *  Responsive
+ */
+
+@media ( min-width : $screenMinWidth ) {
+  .gutters .col {
+    margin-left: $gutters;
+  }
+  .gutters .col:first-child {
+    margin-left: 0;
+  }
+}
+
+@media ( min-width : $screenMinWidth ) {
+  @for $i from 1 through $gridColumns{
+    .span#{$i} {
+      @include span($i);
+    }
+  }
+
+  @for $j from 1 through $gridColumns{
+    .gutters .span#{$j} {
+      @include gutters_span($j);
+    }
+  }
+}

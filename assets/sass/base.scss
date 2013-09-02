@@ -1,0 +1,10 @@
+/**
+ * Set all elements to box-sizing
+ * Fix IE 6,7: https://github.com/Schepp/box-sizing-polyfill
+*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(/scripts/boxsizing.htc);
+}
