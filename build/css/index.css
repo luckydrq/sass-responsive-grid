@@ -1,5 +1,5 @@
 /**
- * Set all elements to box-sizing 
+ * Set all elements to box-sizing
  * Fix IE 6,7: https://github.com/Schepp/box-sizing-polyfill
 */
 * {
@@ -15,29 +15,40 @@
 .container {
   max-width: 800px;
   margin: 0 auto; }
-
-/* Clear fix */
-.container:after,
-.row:after,
-.col:after,
-.clr:after,
-.group:after {
-  content: "";
-  display: table;
-  clear: both; }
+  .container:before, .container:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .container:after {
+    clear: both; }
 
 /* Default row */
 .row {
   padding-bottom: 0em; }
+  .row:before, .row:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .row:after {
+    clear: both; }
 
 /* Default column */
 .col {
   display: block;
   float: left;
   width: 100%; }
+  .col:before, .col:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .col:after {
+    clear: both; }
 
 /**
- *  Responsive 
+ *  Responsive
  */
 @media (min-width: 768px) {
   .gutters .col {

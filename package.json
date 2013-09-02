@@ -1,0 +1,12 @@
+{
+  "author": "Deng Ruoqi",
+  "name": "sass-responsive-grid",
+  "version": "0.1.0",
+  "description": "A solution for responsive grid system",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-shell": "~0.3.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
