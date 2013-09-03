@@ -1,51 +1,59 @@
 /**
- * Set page
+ * Container
  *
 */
 .container {
-  max-width: $containerMaxWidth;
+  max-width: $container-max-width;
   margin: 0 auto;
   @include clearfix;
 }
 
-/* Default row */
+/* row to wrap columns */
 .row {
   padding-bottom: 0em;
   @include clearfix;
 }
 
+/* remove margin of the first column */
+.fc{
+  margin-left: 0;
+}
 
-/* Default column */
-.col {
-  display: block;
-  float: left;
-  width: 100%;
-  @include clearfix;
+/* set default column */
+@for $i from 1 through $grid-columns{
+  .span#{$i} {
+    @include span($i);
+    float: left;
+    display: inline; //IE6
+  }
+}
+
+@for $i from 1 through $grid-columns{
+  .push#{$i} {
+    @include push($i);
+  }
+}
+
+@for $i from 1 through $grid-columns{
+  .pull#{$i} {
+    @include pull($i);
+  }
+}
+
+@for $i from 1 through $grid-columns{
+  .offset#{$i} {
+    @include offset($i);
+  }
 }
 
 /**
  *  Media Queries
  */
 
-@media ( min-width : $screenMinWidth ) {
-  .gutters .col {
-    margin-left: $gutters;
-  }
-  .gutters .col:first-child {
-    margin-left: 0;
-  }
-}
-
-@media ( min-width : $screenMinWidth ) {
-  @for $i from 1 through $gridColumns{
-    .span#{$i} {
-      @include span($i);
-    }
-  }
-
-  @for $j from 1 through $gridColumns{
-    .gutters .span#{$j} {
-      @include gutters_span($j);
+@media ( min-width : $screen-min-width ) {
+  @for $i from 1 through $grid-columns{
+    .gutters .span#{$i} {
+      @include gutters_span($i);
     }
   }
 }

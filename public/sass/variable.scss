@@ -1,5 +1,5 @@
-$screenMinWidth: 768px;
-$containerMaxWidth: 800px;
-$gridColumns: 12;
-$gutters: 2%;
-$col: (100% - ($gridColumns - 1) * $gutters) / $gridColumns;
+$screen-min-width: 768px;
+$container-max-width: 990px;
+$grid-columns: 12;
+$grid-gutter-width: 1%;
+$grid-width: (100% - ($grid-columns - 1) * $grid-gutter-width) / $grid-columns;

@@ -20,9 +20,23 @@
 }
 
 @mixin span($columns){
-  width: (100% / $gridColumns) * $columns;
+  width: percentage($columns / $grid-columns);
 }
 
 @mixin gutters_span($columns){
-  width: $col * $columns + $gutters * ($columns - 1);
+  width: $grid-width * $columns + $grid-gutter-width * ($columns - 1);
+}
+
+@mixin push($columns){
+  position: relative;
+  left: percentage($columns / $grid-columns);
+}
+
+@mixin pull($columns){
+  position: relative;
+  right: percentage($columns / $grid-columns);
+}
+
+@mixin offset($columns){
+  margin-left: percentage($columns / $grid-columns);
 }

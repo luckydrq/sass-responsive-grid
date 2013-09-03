@@ -8,3 +8,7 @@
   box-sizing: border-box;
   *behavior: url(/scripts/boxsizing.htc);
 }
+/*IE6*/
+body{
+  text-align: center;
+}
